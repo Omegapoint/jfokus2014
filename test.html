@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Monteruppgift</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>  
+  <script src="app.js"></script>
+
+</head>
+<body>
+  <div id="logo"><img src="Images/omegapoint_logo.jpg"></div>
+ 	<div id="hands">
+ 		<div id="paper-leftside" class="unselected" style="float:left;border-style: solid;border-width:1px;">
+ 			<img src="Images/paper.png"></img>
+ 		</div>
+ 		<div id="rock-leftside" class="unselected" style="float:left;border-style: solid;border-width:1px;">
+ 			<img src="Images/rock.png"></img>
+ 		</div>
+ 		<div id="scissors-leftside" class="unselected" style="float:left;border-style: solid;border-width:1px;">
+ 			<img src="Images/scissors.png"></img>
+ 		</div> 
+
+    <div id="paper-rightside" class="unselected" style="float:right;border-style:solid;border-width:1px;">
+      <img src="Images/paper.png"></img>
+    </div>
+    <div id="rock-rightside" class="unselected" style="float:right;border-style: solid;border-width:1px;">
+      <img src="Images/rock.png"></img>
+    </div>
+    <div id="scissors-rightside" class="unselected" style="float:right;border-style: solid;border-width:1px;">
+      <img src="Images/scissors.png"></img>
+    </div>
+
+    <div class="avantfont" id="score">
+    <p>Score:&nbsp;<span>0</span></p>
+    </div>
+ 	</div> 
+ 		<div id="progress">
+    <div id="AI-name" class="avantfont"></div>
+    <div id="Player-name" class="avantfont"></div>
+    <div class="avantfont" style="text-align:center;">Balance</div>
+    <div id="progressbar"></div>
+
+    </div>
+   	<div id="textbox">
+   		<label style="display:block; text-align:center;color:white" for="customImpl"></label>
+  		<textarea id="customImpl" rows="20" cols="80">function CustomPlayer() {
+  	/**
+  	   Computes a move in the game.
+  	   Returns a index for either paper, rock or scissors. E.g 0,1 or 2.
+  	   The aiMoves parameter is an array sent by the game engine which tells
+  	   the player the history of the ai moves
+  	*/
+  	this.makeMove = function(aiMoves) { 
+  			return Math.floor((Math.random()*3));
+  	};
+  }
+  		</textarea>
+ 	</div>
+  <div id="mess"></div>
+  <div id="startbutton">
+  <a href="#" onclick="init()" class="myButton avantfont">Implement</a>
+  </div>
+<script id="xyz">
+	var impl = 'function Custom() { this.makeMove = function(aiMoves) { return Math.floor((Math.random()*3)+1);};} Custom.prototype = new Player(); function getInstance() { return new Custom(); }';
+</script> 	
+<script>
+$("#progressbar").progressbar({
+  value: 0
+});
+</script>
+ 
+</body>
+</html>

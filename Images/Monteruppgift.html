@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)file:///Users/oscarvigell/Documents/Omegapoint/app-jfokus/test.html# -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Monteruppgift</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" type="text/css" href="./Monteruppgift_files/style.css">
+  <script src="./Monteruppgift_files/jquery-1.10.2.js"></script>
+  <script src="./Monteruppgift_files/jquery-ui.js"></script>  
+  <script src="./Monteruppgift_files/app.js"></script>
+
+</head>
+<body style="">
+  <div id="logo"><img src="./Monteruppgift_files/omegapoint_logo.jpg"></div>
+ 	<div id="hands">
+ 		<div id="paper-leftside" class="unselected" style="float:left;border-style: solid;border-width:1px;">
+ 			<img src="./Monteruppgift_files/paper.png">
+ 		</div>
+ 		<div id="rock-leftside" class="unselected" style="float:left;border-style: solid;border-width:1px;">
+ 			<img src="./Monteruppgift_files/rock.png">
+ 		</div>
+ 		<div id="scissors-leftside" class="unselected" style="float:left;border-style: solid;border-width:1px;">
+ 			<img src="./Monteruppgift_files/scissors.png">
+ 		</div> 
+
+    <div id="paper-rightside" class="unselected" style="float:right;border-style:solid;border-width:1px;">
+      <img src="./Monteruppgift_files/paper.png">
+    </div>
+    <div id="rock-rightside" class="unselected" style="float:right;border-style: solid;border-width:1px;">
+      <img src="./Monteruppgift_files/rock.png">
+    </div>
+    <div id="scissors-rightside" class="unselected" style="float:right;border-style: solid;border-width:1px;">
+      <img src="./Monteruppgift_files/scissors.png">
+    </div>
+
+    <div class="avantfont" id="score">
+    <p>Score:&nbsp;<span>0</span></p>
+    </div>
+ 	</div> 
+ 		<div id="progress">
+    <div class="avantfont" style="text-align:center;">Balance</div>
+    <div id="progressbar" class="ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="ui-progressbar-value ui-widget-header ui-corner-left" style="display: none; width: 0%;"></div></div>
+    </div>
+   	<div id="textbox">
+   		<label style="display:block; text-align:center;color:white" for="customImpl"></label>
+  		<textarea id="customImpl" rows="20" cols="80">function CustomPlayer() {
+  	/**
+  	   Computes a move in the game.
+  	   Returns a index for either paper, rock or scissors. E.g 0,1 or 2.
+  	   The aiMoves parameter is an array sent by the game engine which tells
+  	   the player the history of the ai moves
+  	*/
+  	this.makeMove = function(aiMoves) { 
+  			return Math.floor((Math.random()*3));
+  	};
+  }
+  		</textarea>
+ 	</div>
+  <div id="mess"></div>
+  <div id="startbutton">
+  <a href="./Monteruppgift_files/Monteruppgift.html" onclick="init()" class="myButton avantfont">Implement</a>
+  </div>
+<script id="xyz">
+	var impl = 'function Custom() { this.makeMove = function(aiMoves) { return Math.floor((Math.random()*3)+1);};} Custom.prototype = new Player(); function getInstance() { return new Custom(); }';
+</script> 	
+<script>
+$("#progressbar").progressbar({
+  value: 0
+});
+</script>
+ 
+
+</body></html>
